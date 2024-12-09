@@ -34,7 +34,7 @@ public class GitHubClient {
                     .retrieve()
                     .body(String.class);
 
-            logger.info("Successfully fetched user details for username: {} from: ", response, "/users/" + userName);
+            logger.info("Successfully fetched user details for username: {}", userName);
             return response;
         }catch (HttpClientErrorException e){
             logger.error("ERROR fetched user details for username: {}", userName);
@@ -49,7 +49,7 @@ public class GitHubClient {
                     .uri("/users/" + userName + "/repos")
                     .retrieve()
                     .body(String.class);
-            logger.info("Successfully fetched user repos for username: {} from: ", response, "/users/" + userName  + "/repos");
+            logger.info("Successfully fetched user repos for username: {}", userName);
             return response;
         }catch (HttpClientErrorException e){
             logger.error("ERROR fetched user repos for username: {}", userName);
